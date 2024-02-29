@@ -1,0 +1,20 @@
+[15-Oct-2023 10:42:52 UTC] PHP Notice:  Undefined variable: resizedImage in /home2/tintech1/public_html/asis/barrack-manager/backend.php on line 47
+[15-Oct-2023 10:42:52 UTC] PHP Fatal error:  Uncaught MeekroDBException: Column 'image_url' cannot be null in /home2/tintech1/public_html/asis/connections/meekro/db.class.php:805
+Stack trace:
+#0 /home2/tintech1/public_html/asis/connections/meekro/db.class.php(771): MeekroDB->queryHelper(Array, Array)
+#1 /home2/tintech1/public_html/asis/connections/meekro/db.class.php(441): MeekroDB->query('%l INTO %b %lb ...', 'INSERT', 'barrack_unit_im...', Array, Array)
+#2 /home2/tintech1/public_html/asis/connections/meekro/db.class.php(444): MeekroDB->insertOrReplace('INSERT', 'barrack_unit_im...', Array)
+#3 /home2/tintech1/public_html/asis/connections/meekro/db.class.php(61): MeekroDB->insert('barrack_unit_im...', Array)
+#4 /home2/tintech1/public_html/asis/barrack-manager/backend.php(52): DB::__callStatic('insert', Array)
+#5 {main}
+  thrown in /home2/tintech1/public_html/asis/connections/meekro/db.class.php on line 805
+[15-Oct-2023 10:58:00 UTC] PHP Notice:  Undefined variable: imageTitle in /home2/tintech1/public_html/asis/barrack-manager/backend.php on line 69
+[15-Oct-2023 11:07:34 UTC] PHP Fatal error:  Uncaught MeekroDBException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as image_title FROM image_title  ORDER BY title_id ASC' at line 1 in /home2/tintech1/public_html/asis/connections/meekro/db.class.php:805
+Stack trace:
+#0 /home2/tintech1/public_html/asis/connections/meekro/db.class.php(771): MeekroDB->queryHelper(Array, Array)
+#1 /home2/tintech1/public_html/asis/connections/meekro/db.class.php(61): MeekroDB->query('SELECT * as ima...')
+#2 /home2/tintech1/public_html/asis/barrack-manager/modals.php(18): DB::__callStatic('query', Array)
+#3 /home2/tintech1/public_html/asis/barrack-manager/barrack_unit.php(131): include('/home2/tintech1...')
+#4 {main}
+  thrown in /home2/tintech1/public_html/asis/connections/meekro/db.class.php on line 805
+[15-Oct-2023 11:08:41 UTC] PHP Notice:  Undefined variable: imageTitle in /home2/tintech1/public_html/asis/barrack-manager/backend.php on line 69

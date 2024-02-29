@@ -1,0 +1,23 @@
+[19-Oct-2023 09:12:00 UTC] PHP Notice:  Undefined variable: password in /home2/tintech1/public_html/asis/admin/backend.php on line 74
+[19-Oct-2023 09:17:30 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[20-Oct-2023 09:52:25 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[20-Oct-2023 09:57:54 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[20-Oct-2023 10:00:53 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[20-Oct-2023 10:02:38 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[20-Oct-2023 10:39:38 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[20-Oct-2023 10:40:15 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[20-Oct-2023 10:55:57 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[20-Oct-2023 10:56:47 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 188
+[20-Oct-2023 10:56:47 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[20-Oct-2023 10:57:01 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[20-Oct-2023 11:16:59 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[20-Oct-2023 11:21:33 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[20-Oct-2023 11:38:12 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[20-Oct-2023 11:52:07 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[20-Oct-2023 11:52:34 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[20-Oct-2023 11:54:49 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[20-Oct-2023 13:29:23 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[23-Oct-2023 08:46:33 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[23-Oct-2023 08:48:07 UTC] PHP Notice:  Undefined index: rank in /home2/tintech1/public_html/asis/admin/edit-user.php on line 14
+[23-Oct-2023 09:11:27 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
+[23-Oct-2023 13:53:24 UTC] PHP Deprecated:  crypt(): Supplied salt is not valid for DES. Possible bug in provided salt format. in /home2/tintech1/public_html/asis/admin/backend.php on line 23
