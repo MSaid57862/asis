@@ -132,7 +132,7 @@ function saveRecord(){
              </div>
              <div class="col-md-4">
             <div class="mb-3">
-                <label style="font-size: 20px;" for="svn" class="">Service Number </label>
+                <label style="font-size: 20px; color: black;" for="svn" class="">Service Number </label>
               <span style="font-size: 20px;"><strong><?php echo $svn ?></strong></span>
              </div> 
             </div>
@@ -140,98 +140,98 @@ function saveRecord(){
                     <div class="col-md-4">
                      <div class="mb-3">
                         
-                        <label style="font-size: 20px;" for="hqNo">Headquarter Number</label>
+                        <label style="font-size: 20px;color: black;" for="hqNo">Headquarter Number</label>
                         <span style="font-size: 20px;"><strong><?php echo $hqNo; ?></strong></span>
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="fileRef">File Reference</label>
+                        <label style="font-size: 20px;color: black" for="fileRef">File Reference</label>
                         <span style="font-size: 20px;"><strong><?php echo $fileRef; ?></strong></span>
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="rank" class="">Rank</label>
+                        <label style="font-size: 20px;color: black" for="rank" class="">Rank</label>
                         <span style="font-size: 20px;"><strong><?php echo $rank ;?></strong></span>
                       </div>  
                     </div>
                       
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="initials">Initials</label>
+                        <label style="font-size: 20px;color: black" for="initials">Initials</label>
                         <span style="font-size: 20px;"><strong><?php echo $initials; ?></strong></span>
                     </div>
                     </div>
                     
                      <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="gender">Gender</label>
+                        <label style="font-size: 20px;color: black" for="gender">Gender</label>
                         <span style="font-size: 20px;"><strong><?php echo $gender; ?></strong></span>
                     </div>
                   </div>
                   
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="maritalStatus">Marital Status</label>
+                        <label style="font-size: 20px;color: black" for="maritalStatus">Marital Status</label>
                         <span style="font-size: 20px;"><strong><?php echo $maritalStatus; ?></strong></span>
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="dob">Date of Birth</label>
+                        <label style="font-size: 20px;color: black" for="dob">Date of Birth</label>
                         <span style="font-size: 20px;"><strong><?php echo $dob; ?></strong></span>
                     </div>
                   </div>
                   
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="phone">Phone</label>
+                        <label style="font-size: 20px;color: black" for="phone">Phone</label>
                         <span style="font-size: 20px;"><strong><?php echo $phone; ?></strong></span>
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="email">Email</label>
+                        <label style="font-size: 20px;color: black" for="email">Email</label>
                         <span style="text-transform:lowercase; font-size: 20px;"><strong><?php echo $officerEmail; ?></strong></span>
                     </div>
                  </div>
                      
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="state">State of Origin</label>
+                        <label style="font-size: 20px;color: black" for="state">State of Origin</label>
                         <span style="font-size: 20px;"><strong><?php echo $state; ?></strong></span>
                     </div>
                   </div>
                   
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="lga">LGA of Origin</label>
+                        <label style="font-size: 20px;color: black" for="lga">LGA of Origin</label>
                         <span style="font-size: 20px;"><strong><?php echo $lga; ?></strong></span>
                     </div>
                 </div>
                 
                  <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="state1">State of Residence</label>
+                        <label style="font-size: 20px;color: black" for="state1">State of Residence</label>
                         <span style="font-size: 20px;"><strong><?php echo $state1; ?></strong></span>
                     </div>
                   </div>
                   
                <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="lga1">LGA of Residence</label>
+                        <label style="font-size: 20px;color: black" for="lga1">LGA of Residence</label>
                         <span style="font-size: 20px;"><strong><?php echo $lga1; ?></strong></span>
                     </div>
             </div>
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="address">Residential Address</label>
+                        <label style="font-size: 20px;color: black" for="address">Residential Address</label>
                         <span style="font-size: 20px;"><strong><?php echo $residenceAddress; ?></strong></span>
                     </div>
                 </div>
@@ -239,21 +239,21 @@ function saveRecord(){
                 
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="appointmentDate">Date of First Appointment</label>
+                        <label style="font-size: 20px;color: black" for="appointmentDate">Date of First Appointment</label>
                         <span style="font-size: 20px;"><strong><?php echo $appointmentDate; ?></strong></span>
                     </div>
                   </div>
                   
                    <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="confirmationDate">Date of Confirmation</label>
+                        <label style="font-size: 20px;color: black" for="confirmationDate">Date of Confirmation</label>
                         <span style="font-size: 20px;"><strong><?php echo $confirmationDate; ?></strong></span>
                     </div>
             </div>
             
                <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;" for="appointmentCategory">Appointment Category</label>
+                        <label style="font-size: 20px;color: black" for="appointmentCategory">Appointment Category</label>
                         <span style="font-size: 20px;"><strong><?php echo $appointmentCategory; ?></strong></span>
                     </div>
             </div>
