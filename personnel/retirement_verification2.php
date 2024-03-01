@@ -130,131 +130,131 @@ function saveRecord(){
                       <h3><strong><span><?php echo $surname. ' '.$firstname.' '.$middleName.' '.$othername; ?></span></strong></h3>
                   </div>
              </div>
-                  <div class="col-md-4">
-                     <div class="mb-3">
-                        <label for="svn" class="">Service Number</label>
-                        <span><strong><?php echo $svn ?></strong></span>
-                    </div> 
-                  </div>
+             <div class="col-md-4">
+            <div class="mb-3">
+                <label style="font-size: 20px;" for="svn" class="">Service Number </label>
+              <span style="font-size: 20px;"><strong><?php echo $svn ?></strong></span>
+             </div> 
+            </div>
                       
                     <div class="col-md-4">
                      <div class="mb-3">
                         
-                        <label for="hqNo">Headquarter Number</label>
-                        <span><strong><?php echo $hqNo; ?></strong></span>
+                        <label style="font-size: 20px;" for="hqNo">Headquarter Number</label>
+                        <span style="font-size: 20px;"><strong><?php echo $hqNo; ?></strong></span>
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="fileRef">File Reference</label>
-                        <span><strong><?php echo $fileRef; ?></strong></span>
+                        <label style="font-size: 20px;" for="fileRef">File Reference</label>
+                        <span style="font-size: 20px;"><strong><?php echo $fileRef; ?></strong></span>
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="rank" class="">Rank</label>
-                        <span><strong><?php echo $rank ;?></strong></span>
+                        <label style="font-size: 20px;" for="rank" class="">Rank</label>
+                        <span style="font-size: 20px;"><strong><?php echo $rank ;?></strong></span>
                       </div>  
                     </div>
                       
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="initials">Initials</label>
-                        <span><strong><?php echo $initials; ?></strong></span>
+                        <label style="font-size: 20px;" for="initials">Initials</label>
+                        <span style="font-size: 20px;"><strong><?php echo $initials; ?></strong></span>
                     </div>
                     </div>
                     
                      <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="gender">Gender</label>
-                        <span><strong><?php echo $gender; ?></strong></span>
+                        <label style="font-size: 20px;" for="gender">Gender</label>
+                        <span style="font-size: 20px;"><strong><?php echo $gender; ?></strong></span>
                     </div>
                   </div>
                   
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="maritalStatus">Marital Status</label>
-                        <span><strong><?php echo $maritalStatus; ?></strong></span>
+                        <label style="font-size: 20px;" for="maritalStatus">Marital Status</label>
+                        <span style="font-size: 20px;"><strong><?php echo $maritalStatus; ?></strong></span>
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="dob">Date of Birth</label>
-                        <span><strong><?php echo $dob; ?></strong></span>
+                        <label style="font-size: 20px;" for="dob">Date of Birth</label>
+                        <span style="font-size: 20px;"><strong><?php echo $dob; ?></strong></span>
                     </div>
                   </div>
                   
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="phone">Phone</label>
-                        <span><strong><?php echo $phone; ?></strong></span>
+                        <label style="font-size: 20px;" for="phone">Phone</label>
+                        <span style="font-size: 20px;"><strong><?php echo $phone; ?></strong></span>
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="email">Email</label>
-                        <span style="text-transform:lowercase"><strong><?php echo $officerEmail; ?></strong></span>
+                        <label style="font-size: 20px;" for="email">Email</label>
+                        <span style="text-transform:lowercase; font-size: 20px;"><strong><?php echo $officerEmail; ?></strong></span>
                     </div>
                  </div>
                      
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="state">State of Origin</label>
-                        <span><strong><?php echo $state; ?></strong></span>
+                        <label style="font-size: 20px;" for="state">State of Origin</label>
+                        <span style="font-size: 20px;"><strong><?php echo $state; ?></strong></span>
                     </div>
                   </div>
                   
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="lga">LGA of Origin</label>
-                        <span><strong><?php echo $lga; ?></strong></span>
+                        <label style="font-size: 20px;" for="lga">LGA of Origin</label>
+                        <span style="font-size: 20px;"><strong><?php echo $lga; ?></strong></span>
                     </div>
                 </div>
                 
                  <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="state1">State of Residence</label>
-                        <span><strong><?php echo $state1; ?></strong></span>
+                        <label style="font-size: 20px;" for="state1">State of Residence</label>
+                        <span style="font-size: 20px;"><strong><?php echo $state1; ?></strong></span>
                     </div>
                   </div>
                   
                <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="lga1">LGA of Residence</label>
-                        <span><strong><?php echo $lga1; ?></strong></span>
+                        <label style="font-size: 20px;" for="lga1">LGA of Residence</label>
+                        <span style="font-size: 20px;"><strong><?php echo $lga1; ?></strong></span>
                     </div>
             </div>
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="address">Residential Address</label>
-                        <span><strong><?php echo $residenceAddress; ?></strong></span>
+                        <label style="font-size: 20px;" for="address">Residential Address</label>
+                        <span style="font-size: 20px;"><strong><?php echo $residenceAddress; ?></strong></span>
                     </div>
                 </div>
                 
                 
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="appointmentDate">Date of First Appointment</label>
-                        <span><strong><?php echo $appointmentDate; ?></strong></span>
+                        <label style="font-size: 20px;" for="appointmentDate">Date of First Appointment</label>
+                        <span style="font-size: 20px;"><strong><?php echo $appointmentDate; ?></strong></span>
                     </div>
                   </div>
                   
                    <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="confirmationDate">Date of Confirmation</label>
-                        <span><strong><?php echo $confirmationDate; ?></strong></span>
+                        <label style="font-size: 20px;" for="confirmationDate">Date of Confirmation</label>
+                        <span style="font-size: 20px;"><strong><?php echo $confirmationDate; ?></strong></span>
                     </div>
             </div>
             
                <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="appointmentCategory">Appointment Category</label>
-                        <span><strong><?php echo $appointmentCategory; ?></strong></span>
+                        <label style="font-size: 20px;" for="appointmentCategory">Appointment Category</label>
+                        <span style="font-size: 20px;"><strong><?php echo $appointmentCategory; ?></strong></span>
                     </div>
             </div>
 
@@ -318,7 +318,7 @@ function saveRecord(){
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
                             <label for="spouseEmail">EMAIL</label>
-                            <input type="email"  name="spouseEmail" value="" required="required" readonly class="form-control" id="spouseEmail">
+                            <input type="email"  name="spouseEmail" value="" class="form-control" id="spouseEmail">
                           </div>
                          </div>
                 
@@ -327,8 +327,7 @@ function saveRecord(){
                         <label for="spouseAddress">Address</label>
                         <input type="text" name="spouseAddress" required="required" value="" class="form-control" id="spouseAddress" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
-                </div>
-                
+                </div>                
                 <div class="col-md-12 mb-3" style="background-color:#ecedeb; color:#226305;">
                     <span><h5>Next of Kin Information 1</h5></span>
                 </div>
@@ -349,7 +348,7 @@ function saveRecord(){
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
                             <label for="email">EMAIL</label>
-                            <input type="email"  name="email" value="<?php echo $kinEmail; ?>" required="required" readonly class="form-control" id="email">
+                            <input type="email"  name="email" value="<?php echo $kinEmail; ?>"  class="form-control" id="email">
                           </div>
                          </div>
                   
@@ -428,9 +427,12 @@ function saveRecord(){
             <?php
             }
         ?>
-            <div class="text-md-end mt-3 mt-md-0">
-                <button type="submit" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" name="officer-bank" id="officer-bank">Verification Summit </button>
-            </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#view-emolument-schedule-modal"><i class="mdi mdi-plus-circle me-1"></i> Add Attachment </button>
+            <button type="submit" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" name="officer-bank" id="officer-bank">Submit Form</button>
+        </div>
+
+            
         </form>
     </div>
                 </div> <!-- end card body-->

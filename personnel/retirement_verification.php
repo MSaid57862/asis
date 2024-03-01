@@ -105,7 +105,6 @@
                         </div>
                                 
                     </div> <!-- end row -->
-                        
     <div class="form-group col-md-12 preview" id="preview-div">
         <form class="form row" id="" method="POST" action="retirement_verification2.php" enctype="multipart/form-data">
                 <div class="row justify-content-between" style="background-color:#ecedeb; color:#226305;">
@@ -120,7 +119,19 @@
                                         </div><!-- end col-->
                                      </div> <!-- end row -->
                   <div class="col-md-4 mb-3">
+ <div class="color"><h2>Change Profile Picture:</h2></div>
+
+
+
                         <span><img src="<?php echo 'passports/'.$passport; ?>" height="190px" width="180px" ></span>
+                        <div class="right">
+
+ <input type="file" name="image" class="font"> 
+ 
+    <input type="submit" value="Upload" class="greenButton">
+        <br/><br/>
+		
+</div>
                  </div>
                     
                 <div class="col-md-8 my-auto">
@@ -294,10 +305,7 @@
                         <span><strong><?php echo $kinAddress; ?></strong></span>
                     </div>
                 </div>
-                
-               
-              
-                  
+            
             
             <br>
             
@@ -322,6 +330,30 @@
             <?php
             }
         ?>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head><title>Change Picture</title>
+<link rel="SHORTCUT ICON" href="Images/dc1.png" />
+<link  rel="stylesheet" type="text/css" href="home.css" title="default styles" media="screen"/>
+<!-- Le styles -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+
+
+
+
+
+
+
+
+
+
         </form>
     </div>
                 </div> <!-- end card body-->
