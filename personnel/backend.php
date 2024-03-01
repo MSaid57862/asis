@@ -575,13 +575,21 @@ if (isset($_POST['departmentId'])) {
            //echo "<script>location.href='preview.php'</script>";
        }else{
        $res = DB::query("SELECT * FROM bank_info WHERE svn = '$svn'");
-           if ($res) {
+       $resSpouse = DB::query("SELECT * FROM spouse WHERE svn = '$svn'");
+           if ($res && $resSpouse) {
            $svn = $_SESSION['svc'];
            $bankName = $_POST['bankName'];
            $accName = $_POST['accName'];
            $BVN = $_POST['BVN'];
            $accNumber = $_POST['accNumber'];
+
+           //settings Spouse info
+           $spouseFullName = $_POST['spouseFullName'];
+            $spousePhone = $_POST['spousePhone'];
+            $spouseEmail = $_POST['spouseEmail'];
+            $spouseAddress = $_POST['spouseAddress'];
            
+            $resSpouse = DB::query("UPDATE spouse SET spouseFullName=%s, spousePhone=%s, spouseEmail=%s, spouseAddress=%s WHERE svn=%s", $spouseFullName, $spousePhone, $spouseEmail, $spouseAddress, $svn);
        $res = DB::query("UPDATE bank_info SET bankName=%s, accName=%s, BVN=%s, accNumber=%s WHERE svn=%s", $bankName, $accName, $BVN, $accNumber, $svn);
            $_SESSION['success'] = " Records Successful Added";
            echo "<script>location.href='retirement_verification2.php'</script>";
@@ -592,10 +600,17 @@ if (isset($_POST['departmentId'])) {
            'accName' => $_POST['accName'],
            'BVN' => $_POST['BVN'],
            'accNumber' => $_POST['accNumber'],
-       )
+       ));
+
+       $resSpouse = DB::insert('spouse', array(
+                    'svn' => $_SESSION['svc'],
+                    'spouseFullName' => $_POST['spouseFullName'],
+                    'spousePhone' => $_POST['spousePhone'],
+                    'spouseEmail' => $_POST['spouseEmail'],
+                    'spouseAddress' => $_POST['spouseAddress'],
+                ));
            
-   );
-       if($res){
+       if($res && $resSpouse){
             $_SESSION['success'] = " Records Successful Added";
            echo "<script>location.href='retirement_verification2.php'</script>";
            
@@ -607,6 +622,46 @@ if (isset($_POST['departmentId'])) {
    
        }
    }
+
+
+    //ADDING SPOUSE INFORMATION
+//   if (isset($_POST['officer-spouse'])) {
+//     $svn = $_SESSION['svc'];
+//       $record = DB::query("SELECT * FROM basic_information WHERE svn = '$svn' AND submission_status = 'Submitted'");
+//        if ($record) {
+//            //echo "<script>location.href='preview.php'</script>";
+//        }else{
+//        $res = DB::query("SELECT * FROM spouse WHERE svn = '$svn'"); ------
+//            if ($res) {
+//                 $svn = $_SESSION['svc'];
+//                 $spouseFullName = $_POST['spouseFullName'];
+//                 $spousePhone = $_POST['spousePhone'];
+//                 $spouseEmail = $_POST['spouseEmail'];
+//                 $spouseAddress = $_POST['spouseAddress']; --------------
+                
+//                 $res = DB::query("UPDATE spouse SET spouseFullName=%s, spousePhone=%s, spouseEmail=%s, spouseAddress=%s WHERE svn=%s", $spouseFullName, $spousePhone, $spouseEmail, $spouseAddress, $svn);
+//                 $_SESSION['success'] = " Records Successful Added";
+//                 echo "<script>location.href='retirement_verification2.php'</script>";
+//             }else{
+//                 $res = DB::insert('spouse', array(
+//                     'svn' => $_SESSION['svc'],
+//                     'spouseFullName' => $_POST['spouseFullName'],
+//                     'spousePhone' => $_POST['spousePhone'],
+//                     'spouseEmail' => $_POST['spouseEmail'],
+//                     'spouseAddress' => $_POST['spouseAddress'],
+//                 ));
+//                 if($res){
+//                         $_SESSION['success'] = " Records Successful Added";
+//                     echo "<script>location.href='retirement_verification2.php'</script>";
+                    
+//                 }else{
+//                         $_SESSION['fail'] = " Failed to Added Records ";
+//                         header('Location: ' . $_SERVER['HTTP_REFERER']);
+//                     }
+//             }
+   
+//        }
+//    }
 
 
 
@@ -751,6 +806,10 @@ $tbl = '<div class="retirementInfo text-danger text-center mb-2"><strong>'.$reti
     
     
 }
+
+
+
+
                                         
 //FETCHING OFFICER DETAILS TO MODAL
 	if(isset($_POST['svcModal'])){

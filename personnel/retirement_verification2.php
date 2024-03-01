@@ -372,7 +372,7 @@ function saveRecord(){
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="fullName2">Full Name</label>
+                        <label for="kinFullName2">Full Name</label>
                         <input type="text" name="kinFullname2" required="required" value="" class="form-control" id="kinFullname2" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                   </div>
@@ -385,8 +385,8 @@ function saveRecord(){
                 </div>
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
-                            <label for="kenEmail2">EMAIL</label>
-                            <input type="email"  name="kenEmail2" value="" required="required" readonly class="form-control" id="kenEmail2">
+                            <label for="kinEmail2">EMAIL</label>
+                            <input type="email"  name="kinEmail2" value="" required="required" class="form-control" id="kinEmail2">
                           </div>
                          </div>
                   
@@ -428,7 +428,7 @@ function saveRecord(){
             }
         ?>
         <div class="modal-footer">
-            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#view-emolument-schedule-modal"><i class="mdi mdi-plus-circle me-1"></i> Add Attachment </button>
+            <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#add-attachment"><i class="mdi mdi-plus-circle me-1"></i> Add Attachment </button>
             <button type="submit" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" name="officer-bank" id="officer-bank">Submit Form</button>
         </div>
 

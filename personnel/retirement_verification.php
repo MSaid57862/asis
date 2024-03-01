@@ -118,20 +118,8 @@
                                     </div>
                                         </div><!-- end col-->
                                      </div> <!-- end row -->
-                  <div class="col-md-4 mb-3">
- <div class="color"><h2>Change Profile Picture:</h2></div>
-
-
-
-                        <span><img src="<?php echo 'passports/'.$passport; ?>" height="190px" width="180px" ></span>
-                        <div class="right">
-
- <input type="file" name="image" class="font"> 
- 
-    <input type="submit" value="Upload" class="greenButton">
-        <br/><br/>
-		
-</div>
+                 
+                                    
                  </div>
                     
                 <div class="col-md-8 my-auto">

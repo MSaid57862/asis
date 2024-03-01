@@ -479,6 +479,46 @@
 </div>
 <!-- /.modal -->
 
+
+<!--SCHEDULE EMOLUMENT MODAL-->
+<div id="add-attachment" class="modal fade" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form action="backend.php" method="post" class="parsley-examples">
+                <div class="modal-header">
+                    <h2 class="modal-title">ADD YOUR ATTACHMENT</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                        <div class="row">
+                                 <div class="col-md-12">
+                               <div class="mb-3">
+                                    <label style="font-size: 20px;color: black" for="dateStarted" class="form-label">Retirement Letter</label>
+                                    <input type="file" name="retLetter" required class="form-control" id="retLetter">  
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                               <div class="mb-3">
+                                    <label style="font-size: 20px;color: black" for="dateEnded" class="form-label">Retirement Id Cart</label>
+                                    <input type="file" name="retIdCart" required class="form-control" id="retIdCart">  
+                                </div>
+                            </div>
+                        </div>                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" name="schedule-emolument" class="btn btn-info waves-effect waves-light">UpLord Attachment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- /.modal -->
+
+
+
+
 <!--TERMINATE EMOLUMENT MODAL-->
 <div id="view-emolument-schedule-modal" class="modal fade" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg">
