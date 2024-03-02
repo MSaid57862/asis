@@ -294,29 +294,29 @@ function saveRecord(){
 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="accName">Account Name</label>
-                        <input type="text" name="accName" required="required" value="" class="form-control" id="accName" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="accName">Account Name</label>
+                        <input style="font-size: 20px;color: black" type="text" name="accName" required="required" value="" class="form-control" id="accName" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                   </div>
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="bankName">Bank Name</label>
-                        <input type="text" name="bankName" required="required" value="" class="form-control" id="bankName" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="bankName">Bank Name</label>
+                        <input style="font-size: 20px;color: black" type="text" name="bankName" required="required" value="" class="form-control" id="bankName" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                   </div>
 
                   
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="accNumber">Account Number</label>
-                        <input type="number" minlength="10" maxlength="10" name="accNumber" value="" required="required" class="form-control" id="accNumber">
+                        <label style="font-size: 20px;color: black" for="accNumber">Account Number</label>
+                        <input style="font-size: 20px;color: black" type="number" minlength="10" maxlength="10" name="accNumber" value="" required="required" class="form-control" id="accNumber">
                     </div>
                 </div>
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="BVN">BVN</label>
-                        <input type="number" minlength="10" maxlength="10" name="BVN" value="" required="required" class="form-control" id="BVN">
+                        <label style="font-size: 20px;color: black" for="BVN">BVN</label>
+                        <input style="font-size: 20px;color: black" type="number" minlength="10" maxlength="10" name="BVN" value="" required="required" class="form-control" id="BVN">
                     </div>
                 </div>
               
@@ -327,28 +327,28 @@ function saveRecord(){
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="spouseFullName">Full Name</label>
-                        <input type="text" name="spouseFullName" required="required" value="" class="form-control" id="spouseFullName" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="spouseFullName">Full Name</label>
+                        <input style="font-size: 20px;color: black" type="text" name="spouseFullName" required="required" value="" class="form-control" id="spouseFullName" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                   </div>
                   
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="spousePhone">Phone</label>
-                        <input type="number" minlength="11" maxlength="11" name="spousePhone" value="" required="required" class="form-control" id="spousePhone">
+                        <label style="font-size: 20px;color: black" for="spousePhone">Phone</label>
+                        <input style="font-size: 20px;color: black" type="number" minlength="11" maxlength="11" name="spousePhone" value="" required="required" class="form-control" id="spousePhone">
                     </div>
                 </div>
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
-                            <label for="spouseEmail">EMAIL</label>
-                            <input type="email"  name="spouseEmail" value="" class="form-control" id="spouseEmail">
+                            <label style="font-size: 20px;color: black" for="spouseEmail">EMAIL</label>
+                            <input style="font-size: 20px;color: black" type="email"  name="spouseEmail" value="" class="form-control" id="spouseEmail">
                           </div>
                          </div>
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="spouseAddress">Address</label>
-                        <input type="text" name="spouseAddress" required="required" value="" class="form-control" id="spouseAddress" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="spouseAddress">Address</label>
+                        <input style="font-size: 20px;color: black" type="text" name="spouseAddress" required="required" value="" class="form-control" id="spouseAddress" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>                
                 <div class="col-md-12 mb-3" style="background-color:#ecedeb; color:#226305;">
@@ -357,39 +357,39 @@ function saveRecord(){
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinFullname">Full Name</label>
-                        <input type="text" name="kinFullname1" required="required" value="<?php echo $kinFullname; ?>" class="form-control" id="kinFullname" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="kinFullname">Full Name</label>
+                        <input style="font-size: 20px;color: black" type="text" name="kinFullname1" required="required" value="<?php echo $kinFullname; ?>" class="form-control" id="kinFullname" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                   </div>
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinPhone1">Phone</label>
-                        <input type="number" minlength="11" maxlength="11" name="kinPhone1" value="<?php echo $phone; ?>" required="required" class="form-control" id="phone">
+                        <label style="font-size: 20px;color: black" for="kinPhone1">Phone</label>
+                        <input style="font-size: 20px;color: black" type="number" minlength="11" maxlength="11" name="kinPhone1" value="<?php echo $phone; ?>" required="required" class="form-control" id="phone">
                     </div>
                 </div>
 
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
-                            <label for="email">EMAIL</label>
-                            <input type="email"  name="kinEmail1" value="<?php echo $kinEmail; ?>"  class="form-control" id="email">
+                            <label style="font-size: 20px;color: black" for="email">EMAIL</label>
+                            <input style="font-size: 20px;color: black" type="email"  name="kinEmail1" value="<?php echo $kinEmail; ?>"  class="form-control" id="email">
                           </div>
                 </div>
                   
                  <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinRelationship">Relationship</label>
-                        <input type="text" name="kinRelationship1" required="required" value="<?php echo $relationship; ?>" class="form-control" id="kinRelationship" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="kinRelationship">Relationship</label>
+                        <input style="font-size: 20px;color: black" type="text" name="kinRelationship1" required="required" value="<?php echo $relationship; ?>" class="form-control" id="kinRelationship1" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>
 
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
-                            <label for="gender">Gender</label>
-                              <select name="kinGender1" class="form-control" id="gender">
+                            <label style="font-size: 20px;color: black" for="gender">Gender</label>
+                              <select style="font-size: 20px;color: black" name="kinGender1" class="form-control" id="gender">
                                   
-                                <option value="">--Select Gender--</option>
-                                <option value="MALE" <?php if($gender=='MALE'){ echo 'Selected';}?>>MALE</option>
-                                <option value="FEMALE" <?php if($gender=='FEMALE'){ echo 'Selected';}?>>FEMALE</option>
+                                <option style="font-size: 20px;color: black" value="">--Select Gender--</option>
+                                <option style="font-size: 20px;color: black" value="MALE" <?php if($gender=='MALE'){ echo 'Selected';}?>>MALE</option>
+                                <option style="font-size: 20px;color: black" value="FEMALE" <?php if($gender=='FEMALE'){ echo 'Selected';}?>>FEMALE</option>
                               </select>
                           </div>
                     </div>
@@ -397,8 +397,8 @@ function saveRecord(){
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinAddress">Address</label>
-                        <input type="text" name="kinAddress1" required="required" value="<?php echo $kinAddress; ?>" class="form-control" id="kinAddress" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="kinAddress">Address</label>
+                        <input style="font-size: 20px;color: black" type="text" name="kinAddress1" required="required" value="<?php echo $kinAddress; ?>" class="form-control" id="kinAddress" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>
 
@@ -408,46 +408,46 @@ function saveRecord(){
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinFullName">Full Name</label>
-                        <input type="text" name="kinFullName2" required="required" value="" class="form-control" id="kinFullName" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="kinFullName">Full Name</label>
+                        <input style="font-size: 20px;color: black" type="text" name="kinFullName2" required="required" value="" class="form-control" id="kinFullName" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                   </div>
                   
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinPhone">Phone</label>
-                        <input type="text" minlength="11" maxlength="11" name="kinPhone2" value="" required="required" class="form-control" id="kinPhone">
+                        <label style="font-size: 20px;color: black" for="kinPhone">Phone</label>
+                        <input style="font-size: 20px;color: black" type="text" minlength="11" maxlength="11" name="kinPhone2" value="" required="required" class="form-control" id="kinPhone">
                     </div>
                 </div>
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
-                            <label for="kinEmail2">EMAIL</label>
-                            <input type="email"  name="kinEmail2" value="" required="required" class="form-control" id="kinEmail">
+                            <label style="font-size: 20px;color: black" for="kinEmail2">EMAIL</label>
+                            <input style="font-size: 20px;color: black" type="email"  name="kinEmail2" value="" required="required" class="form-control" id="kinEmail">
                           </div>
                          </div>
                   
                  <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinRelationship">Relationship</label>
-                        <input type="text" name="kinRelationship2" required="required" value="" class="form-control" id="kinRelationship" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="kinRelationship">Relationship</label>
+                        <input style="font-size: 20px;color: black" type="text" name="kinRelationship2" required="required" value="" class="form-control" id="kinRelationship" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>
 
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
-                            <label for="gender">Gender</label>
-                              <select name="kinGender2" class="form-control" id="kinGender">
-                                <option value="">--Select Gender--</option>
-                                <option value="MALE" <?php if($gender=='MALE'){ echo 'Selected';}?>>MALE</option>
-                                <option value="FEMALE" <?php if($gender=='FEMALE'){ echo 'Selected';}?>>FEMALE</option>
+                            <label  style="font-size: 20px;color: black" for="gender">Gender</label>
+                              <select  style="font-size: 20px;color: black" name="kinGender2" class="form-control" id="kinGender">
+                                <option style="font-size: 20px;color: black" value="">--Select Gender--</option>
+                                <option style="font-size: 20px;color: black" value="MALE" <?php if($gender=='MALE'){ echo 'Selected';}?>>MALE</option>
+                                <option style="font-size: 20px;color: black" value="FEMALE" <?php if($gender=='FEMALE'){ echo 'Selected';}?>>FEMALE</option>
                               </select>
                           </div>
                     </div>
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinAddress">Address</label>
-                        <input type="text" name="kinAddress2" required="required" value="" class="form-control" id="kinAddress" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label style="font-size: 20px;color: black" for="kinAddress">Address</label>
+                        <input style="font-size: 20px;color: black" type="text" name="kinAddress2" required="required" value="" class="form-control" id="kinAddress" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>
             

@@ -508,7 +508,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" name="schedule-emolument" class="btn btn-info waves-effect waves-light">UpLord Attachment</button>
+                    <button type="submit" name="" class="btn btn-info waves-effect waves-light">UpLord Attachment</button>
                 </div>
             </form>
         </div>

@@ -466,12 +466,13 @@ if (isset($_POST['departmentId'])) {
             $state1 = $_POST['state1'];
             $lga1 = $_POST['lga1'];
             $residence = $_POST['residenceAddress'];
+            $nin = $_POST['nin'];
             $date = time();
             
         $res = DB::query("UPDATE basic_information SET appointment_date=%s, last_promotion_date=%s, date_posted_to_station=%s, surname=%s, first_name=%s, initials=%s,  other_name=%s, middle_name=%s, phone=%s, officer_email=%s, 
-        date_of_birth=%s, gender=%s, hq_no=%s, file_ref=%s, marital_status=%s, state_id=%s, lga_id=%s, residence_address=%s, residence_state=%s, residence_lga=%s WHERE svn=%s",
+        date_of_birth=%s, gender=%s, hq_no=%s, file_ref=%s, marital_status=%s, state_id=%s, lga_id=%s, residence_address=%s, residence_state=%s, residence_lga=%s nin=%s WHERE svn=%s",
         $appointmentDate, $promotionDate, $datePostToStation, $surname, $firstname,
-        $initials, $othername, $middlename, $phone, $email, $dob, $gender, $hqNo, $fileRef, $maritalStatus, $state, $lga, $residence, $state1, $lga1, $svn);
+        $initials, $othername, $middlename, $phone, $email, $dob, $gender, $hqNo, $fileRef, $maritalStatus, $state, $lga, $residence, $state1, $lga1, $svn, $nin);
         
             //$_SESSION['Id'] = $Id;
             $_SESSION['success'] = " Records Updated Successful ";
@@ -500,6 +501,7 @@ if (isset($_POST['departmentId'])) {
             'residence_address' => $_POST['residenceAddress'],
             'residence_state' => $_POST['state1'],
             'residence_lga' => $_POST['lga1'],
+            'nin' => $_POST['nin'],
             'date_created' => time()
         )
         
