@@ -445,24 +445,24 @@ class MeekroDB {
   public function insertIgnore($table, $data) { return $this->insertOrReplace('INSERT IGNORE', $table, $data); }
   public function replace($table, $data) { return $this->insertOrReplace('REPLACE', $table, $data); }
   
-  // public function insertUpdate() {
-  //   $args = func_get_args();
-  //   $table = array_shift($args);
-  //   $data = array_shift($args);
+  public function insertUpdate() {
+    $args = func_get_args();
+    $table = array_shift($args);
+    $data = array_shift($args);
     
-  //   if (! isset($args[0])) { // update will have all the data of the insert
-  //     if (isset($data[0]) && is_array($data[0])) { //multiple insert rows specified -- failing!
-  //       throw new MeekroDBException("Badly formatted insertUpdate() query -- you didn't specify the update component!");
-  //     }
+    if (! isset($args[0])) { // update will have all the data of the insert
+      if (isset($data[0]) && is_array($data[0])) { //multiple insert rows specified -- failing!
+        throw new MeekroDBException("Badly formatted insertUpdate() query -- you didn't specify the update component!");
+      }
       
-  //     $args[0] = $data;
-  //   }
+      $args[0] = $data;
+    }
     
-  //   if (is_array($args[0])) $update = $args[0];
-  //   else $update = $args;
+    if (is_array($args[0])) $update = $args[0];
+    else $update = $args;
     
-  //   return $this->insertOrReplace('INSERT', $table, $data, array('update' => $update)); 
-  // }
+    return $this->insertOrReplace('INSERT', $table, $data, array('update' => $update)); 
+  }
   
   public function delete() {
     $args = func_get_args();

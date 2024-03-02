@@ -133,7 +133,8 @@ function saveRecord(){
              <div class="col-md-4">
             <div class="mb-3">
                 <label style="font-size: 20px; color: black;" for="svn" class="">Service Number </label>
-              <span style="font-size: 20px;"><strong><?php echo $svn ?></strong></span>
+              <!-- <span style="font-size: 20px;"><strong><?php echo $svn ?></strong></span> -->
+              <input style="font-size: 20px;" type="text" name="svn" value="<?php echo $svn ?>" class="form-control" id="svn">
              </div> 
             </div>
                       
@@ -141,98 +142,110 @@ function saveRecord(){
                      <div class="mb-3">
                         
                         <label style="font-size: 20px;color: black;" for="hqNo">Headquarter Number</label>
-                        <span style="font-size: 20px;"><strong><?php echo $hqNo; ?></strong></span>
+                        <input style="font-size: 20px;" type="number" minlength="11" maxlength="11" name="hqNo" value="<?php echo $hqNo; ?>" class="form-control" id="hqNo">
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="fileRef">File Reference</label>
-                        <span style="font-size: 20px;"><strong><?php echo $fileRef; ?></strong></span>
+                        <input style="font-size: 20px;" type="text" minlength="11" maxlength="11" name="fileRef" value="<?php echo $fileRef; ?>" class="form-control" id="fileRef">
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="rank" class="">Rank</label>
-                        <span style="font-size: 20px;"><strong><?php echo $rank ;?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $rank ;?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="rank" value="<?php echo $rank ;?>" class="form-control" id="rank">
                       </div>  
                     </div>
                       
                     <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="initials">Initials</label>
-                        <span style="font-size: 20px;"><strong><?php echo $initials; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $initials; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="initials" value="<?php echo $initials; ?>" class="form-control" id="initials">
                     </div>
                     </div>
                     
                      <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="gender">Gender</label>
-                        <span style="font-size: 20px;"><strong><?php echo $gender; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $gender; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="gender" value="<?php echo $gender; ?>" class="form-control" id="gender">
                     </div>
                   </div>
                   
                     <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="maritalStatus">Marital Status</label>
-                        <span style="font-size: 20px;"><strong><?php echo $maritalStatus; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $maritalStatus; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="maritalStatus" value="<?php echo $maritalStatus; ?>" class="form-control" id="maritalStatus">
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="dob">Date of Birth</label>
-                        <span style="font-size: 20px;"><strong><?php echo $dob; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $dob; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="dob" value="<?php echo $dob; ?>" class="form-control" id="dob">
                     </div>
                   </div>
                   
                     <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="phone">Phone</label>
-                        <span style="font-size: 20px;"><strong><?php echo $phone; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $phone; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="phone" value="<?php echo $phone; ?>" class="form-control" id="phone">
                     </div>
                     </div>
                     
                     <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="email">Email</label>
-                        <span style="text-transform:lowercase; font-size: 20px;"><strong><?php echo $officerEmail; ?></strong></span>
+                        <!-- <span style="text-transform:lowercase; font-size: 20px;"><strong><?php echo $officerEmail; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="officerEmail" value="<?php echo $officerEmail; ?>" class="form-control" id="officerEmail">
                     </div>
                  </div>
                      
                   <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="state">State of Origin</label>
-                        <span style="font-size: 20px;"><strong><?php echo $state; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $state; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="state" value="<?php echo $state; ?>" class="form-control" id="state">
                     </div>
                   </div>
                   
                   <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="lga">LGA of Origin</label>
-                        <span style="font-size: 20px;"><strong><?php echo $lga; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $lga; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="lga" value="<?php echo $lga; ?>" class="form-control" id="lga">
                     </div>
                 </div>
                 
                  <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="state1">State of Residence</label>
-                        <span style="font-size: 20px;"><strong><?php echo $state1; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $state1; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="state1" value="<?php echo $state1; ?>" class="form-control" id="state1">
                     </div>
                   </div>
                   
                <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="lga1">LGA of Residence</label>
-                        <span style="font-size: 20px;"><strong><?php echo $lga1; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $lga1; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="lga1" value="<?php echo $lga1; ?>" class="form-control" id="lga1">
                     </div>
             </div>
                 
                 <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="address">Residential Address</label>
-                        <span style="font-size: 20px;"><strong><?php echo $residenceAddress; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $residenceAddress; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="residenceAddress" value="<?php echo $residenceAddress; ?>" class="form-control" id="residenceAddress">
                     </div>
                 </div>
                 
@@ -240,14 +253,16 @@ function saveRecord(){
                   <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="appointmentDate">Date of First Appointment</label>
-                        <span style="font-size: 20px;"><strong><?php echo $appointmentDate; ?></strong></span>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $appointmentDate; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="appointmentDate" value="<?php echo $appointmentDate; ?>" class="form-control" id="appointmentDate">
                     </div>
                   </div>
                   
                    <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;color: black" for="confirmationDate">Date of Confirmation</label>
-                        <span style="font-size: 20px;"><strong><?php echo $confirmationDate; ?></strong></span>
+                        <label style="font-size: 20px;color: black" for="confirmationDate">NIN</label>
+                        <!-- <span style="font-size: 20px;"><strong><?php echo $confirmationDate; ?></strong></span> -->
+                        <input style="font-size: 20px;" type="text" name="nin" value="" class="form-control" id="nin">
                     </div>
             </div>
             
@@ -255,6 +270,8 @@ function saveRecord(){
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="appointmentCategory">Appointment Category</label>
                         <span style="font-size: 20px;"><strong><?php echo $appointmentCategory; ?></strong></span>
+                        <input style="font-size: 20px;" type="text" name="appointmentCategory" value="<?php echo $appointmentCategory; ?>" class="form-control" id="appointmentCategory">
+
                     </div>
             </div>
 
@@ -262,14 +279,14 @@ function saveRecord(){
                     <div class="col-md-12">
                         <span><h3>OTHER INFORMATION</h3></span>
                     </div>     
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="color: black" for="accNumber">NIN</label>
-                        <input type="number" minlength="10" maxlength="10" name="accNumber" value="" required="required" class="form-control" id="accNumber">
+                        <label style="color: black" for="nin">NIN</label>
+                        <input type="number" minlength="11" maxlength="11" name="nin" value="" required="required" class="form-control" id="nin">
                     </div>
-                    </div>  
-                </div> <!-- end row -->
-            </br>
+                    </div>   -->
+                </div>
+            <!-- </br> -->
 
             <div class="col-md-12 mb-3" style="background-color:#ecedeb; color:#226305;">
                     <span><h5>BANK DETAILS</h5></span>
@@ -347,7 +364,7 @@ function saveRecord(){
                   <div class="col-md-4">
                      <div class="mb-3">
                         <label for="kinPhone1">Phone</label>
-                        <input type="number" minlength="11" maxlength="11" name="phone" value="<?php echo $phone; ?>" required="required" class="form-control" id="phone">
+                        <input type="number" minlength="11" maxlength="11" name="kinPhone1" value="<?php echo $phone; ?>" required="required" class="form-control" id="phone">
                     </div>
                 </div>
 

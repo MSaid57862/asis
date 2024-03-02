@@ -520,50 +520,50 @@ if (isset($_POST['departmentId'])) {
       
 
 //ADDING NEXT OF KIN INFORMATION
-  if (isset($_POST['officer-kin'])) {
-     $svn = $_SESSION['svc'];
-       $record = DB::query("SELECT * FROM basic_information WHERE svn = '$svn' AND submission_status = 'Submitted'");
-        if ($record) {
-            //echo "<script>location.href='preview.php'</script>";
-        }else{
-        $res = DB::query("SELECT * FROM kin_information WHERE svn = '$svn'");
-            if ($res) {
-            $svn = $_SESSION['svc'];
-            $fullname = $_POST['fullname'];
-            $phone = $_POST['phone'];
-            $gender = $_POST['gender'];
-            $email = $_POST['email'];
-            $relationship = $_POST['relationship'];
-            $address = $_POST['address'];
-            $date = time();
-            
-        $res = DB::query("UPDATE kin_information SET fullname=%s, phone=%s, email=%s, gender=%s,  relationship=%s, address=%s WHERE svn=%s", $fullname, $phone, $email, $gender, $relationship, $address, $svn);
+if (isset($_POST['officer-kin'])) {
+    $svn = $_SESSION['svc'];
+      $record = DB::query("SELECT * FROM basic_information WHERE svn = '$svn' AND submission_status = 'Submitted'");
+       if ($record) {
+           //echo "<script>location.href='preview.php'</script>";
+       }else{
+       $res = DB::query("SELECT * FROM kin_information WHERE svn = '$svn'");
+           if ($res) {
+           $svn = $_SESSION['svc'];
+           $fullname = $_POST['fullname'];
+           $phone = $_POST['phone'];
+           $gender = $_POST['gender'];
+           $email = $_POST['email'];
+           $relationship = $_POST['relationship'];
+           $address = $_POST['address'];
+           $date = time();
+           
+       $res = DB::query("UPDATE kin_information SET fullname=%s, phone=%s, email=%s, gender=%s,  relationship=%s, address=%s WHERE svn=%s", $fullname, $phone, $email, $gender, $relationship, $address, $svn);
+           $_SESSION['success'] = " Records Successful Added";
+           echo "<script>location.href='posting_index.php'</script>";
+           }else{
+       $res = DB::insert('kin_information', array(
+           'svn' => $_SESSION['svc'],
+           'fullname' => $_POST['fullname'],
+           'phone' => $_POST['phone'],
+           'email' => $_POST['email'],
+           'relationship' => $_POST['relationship'],
+           'address' => $_POST['address'],
+           'date_created' => time()
+       )
+           
+   );
+       if($res){
             $_SESSION['success'] = " Records Successful Added";
-            echo "<script>location.href='posting_index.php'</script>";
-            }else{
-        $res = DB::insert('kin_information', array(
-            'svn' => $_SESSION['svc'],
-            'fullname' => $_POST['fullname'],
-            'phone' => $_POST['phone'],
-            'email' => $_POST['email'],
-            'relationship' => $_POST['relationship'],
-            'address' => $_POST['address'],
-            'date_created' => time()
-        )
-            
-    );
-        if($res){
-             $_SESSION['success'] = " Records Successful Added";
-            echo "<script>location.href='posting_index.php'</script>";
-            
-        }else{
-             $_SESSION['fail'] = " Failed to Added Records ";
-             header('Location: ' . $_SERVER['HTTP_REFERER']);
-                }
-        }
-    
-        }
-    }
+           echo "<script>location.href='posting_index.php'</script>";
+           
+       }else{
+            $_SESSION['fail'] = " Failed to Added Records ";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+               }
+       }
+   
+       }
+   }
 
 
     //ADDING BANK INFORMATION
@@ -579,6 +579,13 @@ if (isset($_POST['departmentId'])) {
     $email2 = $_POST['kinEmail2'];
     $relationship2 = $_POST['kinRelationship2'];
     $address2 = $_POST['kinAddress2'];
+
+    $kinFullName = $_POST['kinFullname1'];
+    $phone = $_POST['kinPhone1'];
+    $gender = $_POST['kinGender1'];
+    $email = $_POST['kinEmail1'];
+    $relationship = $_POST['kinRelationship1'];
+    $address = $_POST['kinAddress1'];
 
       $record = DB::query("SELECT * FROM basic_information WHERE svn = '$svn' AND submission_status = 'Submitted'");
        if ($record) {
@@ -622,17 +629,28 @@ if (isset($_POST['departmentId'])) {
                     'spouseAddress' => $_POST['spouseAddress'],
                 ));
         $reskin = DB::insert('kin_information', array(
-                    'svn' => $_SESSION['svc'],
-                    'fullname' => $kinFullName2,
-                    'phone' => $phone2,
-                    'email' => $email2,
-                    'relationship' => $relationship2,
-                    'address' => $address2,
-                    'gender' => $gender2,
-                    'date_created' => time(),
-                 ));
+            'svn' => $_SESSION['svc'],
+            'fullname' => $kinFullName2,
+            'phone' => $phone2,
+            'email' => $email2,
+            'relationship' => $relationship2,
+            'address' => $address2,
+            'gender' => $gender2,
+            'date_created' => time(),             
+        ));
+
+        $reskin1 = DB::insert('kin_information', array(
+        'svn' => $_SESSION['svc'],
+        'fullname' => $kinFullName,
+        'phone' => $phone,
+        'email' => $email,
+        'relationship' => $relationship,
+        'address' => $address,
+        'gender' => $gender,
+        'date_created' => time(),
+        ));
            
-        if($res && $resSpouse && $reskin){
+        if($res && $resSpouse && $reskin && $reskin1){
             $_SESSION['success'] = " Records Successful Added";
            echo "<script>location.href='retirement_verification2.php'</script>";
            
@@ -644,55 +662,6 @@ if (isset($_POST['departmentId'])) {
    
        }
    }
-
-
-    //ADDING SPOUSE INFORMATION
-//   if (isset($_POST['officer-spouse'])) {
-//     $svn = $_SESSION['svc'];
-//       $record = DB::query("SELECT * FROM basic_information WHERE svn = '$svn' AND submission_status = 'Submitted'");
-//        if ($record) {
-//            //echo "<script>location.href='preview.php'</script>";
-//        }else{
-//        $res = DB::query("SELECT * FROM spouse WHERE svn = '$svn'"); ------
-//            if ($res) {
-//                 $svn = $_SESSION['svc'];
-//                 $spouseFullName = $_POST['spouseFullName'];
-//                 $spousePhone = $_POST['spousePhone'];
-//                 $spouseEmail = $_POST['spouseEmail'];
-//                 $spouseAddress = $_POST['spouseAddress']; --------------
-                
-//                 $res = DB::query("UPDATE spouse SET spouseFullName=%s, spousePhone=%s, spouseEmail=%s, spouseAddress=%s WHERE svn=%s", $spouseFullName, $spousePhone, $spouseEmail, $spouseAddress, $svn);
-//                 $_SESSION['success'] = " Records Successful Added";
-//                 echo "<script>location.href='retirement_verification2.php'</script>";
-//             }else{
-//                 $res = DB::insert('spouse', array(
-//                     'svn' => $_SESSION['svc'],
-//                     'spouseFullName' => $_POST['spouseFullName'],
-//                     'spousePhone' => $_POST['spousePhone'],
-//                     'spouseEmail' => $_POST['spouseEmail'],
-//                     'spouseAddress' => $_POST['spouseAddress'],
-//                 ));
-//                 if($res){
-//                         $_SESSION['success'] = " Records Successful Added";
-//                     echo "<script>location.href='retirement_verification2.php'</script>";
-                    
-//                 }else{
-//                         $_SESSION['fail'] = " Failed to Added Records ";
-//                         header('Location: ' . $_SERVER['HTTP_REFERER']);
-//                     }
-//             }
-   
-//        }
-//    }
-
-
-
-   
-    
-
-
-
-
 
 //LOAD OFFICER POSTING LIST TABLE
 if(isset($_POST['officerId'])){
