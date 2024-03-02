@@ -258,11 +258,17 @@ function saveRecord(){
                     </div>
             </div>
 
-            <div class="row justify-content-between" style="background-color:#ecedeb; color:#226305;">
-                    <div class="col-md-8">
-                        <span><h2>OTHER INFORMATION </h2></span>
+            <div class="row" style="background-color:#ecedeb; color:#226305;">
+                    <div class="col-md-12">
+                        <span><h3>OTHER INFORMATION</h3></span>
+                    </div>     
+                    <div class="col-md-4">
+                     <div class="mb-3">
+                        <label style="color: black" for="accNumber">NIN</label>
+                        <input type="number" minlength="10" maxlength="10" name="accNumber" value="" required="required" class="form-control" id="accNumber">
                     </div>
-            </div>
+                    </div>  
+                </div> <!-- end row -->
             </br>
 
             <div class="col-md-12 mb-3" style="background-color:#ecedeb; color:#226305;">
