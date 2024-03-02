@@ -1,5 +1,9 @@
+
+
+
+
 <?php 
- json_decode($_GET['officer-bank']);
+ json_decode($_GET['basic_information']);
 session_start(); ?>
 <?php require_once '../connections/meekro/db.class.php'; ?>
 <?php require_once 'functions.php';?>
@@ -568,7 +572,7 @@ if (isset($_POST['departmentId'])) {
 
 
     //ADDING BANK INFORMATION
-  if (isset($_POST['officer-bank'])) {
+    if (isset($_POST['basic_information'])) {
     $svn = $_SESSION['svc'];
       $record = DB::query("SELECT * FROM basic_information WHERE svn = '$svn' AND submission_status = 'Submitted'");
        if ($record) {
@@ -576,7 +580,8 @@ if (isset($_POST['departmentId'])) {
        }else{
        $res = DB::query("SELECT * FROM bank_info WHERE svn = '$svn'");
        $resSpouse = DB::query("SELECT * FROM spouse WHERE svn = '$svn'");
-           if ($res && $resSpouse) {
+       $reskin = DB::query("SELECT * FROM kin_information_two WHERE svn = '$svn'");
+           if ($res && $resSpouse && $reskin) {
            $svn = $_SESSION['svc'];
            $bankName = $_POST['bankName'];
            $accName = $_POST['accName'];
@@ -588,7 +593,17 @@ if (isset($_POST['departmentId'])) {
             $spousePhone = $_POST['spousePhone'];
             $spouseEmail = $_POST['spouseEmail'];
             $spouseAddress = $_POST['spouseAddress'];
-           
+
+            //settings Next of kin info
+            $kinFullName = $_POST['kinFullName'];
+            $phone = $_POST['kinPhone'];
+            $gender = $_POST['kinGender'];
+            $email = $_POST['kinEmail'];
+            $relationship = $_POST['kinRelationship'];
+            $address = $_POST['kinAddress'];
+
+
+            $reskin = DB::query("UPDATE kin_information_two SET kinFullName=%s, kinPhone=%s, kinEmail=%s, kinGender=%s,  kinRelationship=%s, kinAddress=%s WHERE svn=%s", $kinFullName, $kinPhone, $kinEmail, $kinGender, $kinRelationship, $kinAddress, $svn);
             $resSpouse = DB::query("UPDATE spouse SET spouseFullName=%s, spousePhone=%s, spouseEmail=%s, spouseAddress=%s WHERE svn=%s", $spouseFullName, $spousePhone, $spouseEmail, $spouseAddress, $svn);
        $res = DB::query("UPDATE bank_info SET bankName=%s, accName=%s, BVN=%s, accNumber=%s WHERE svn=%s", $bankName, $accName, $BVN, $accNumber, $svn);
            $_SESSION['success'] = " Records Successful Added";
@@ -609,8 +624,17 @@ if (isset($_POST['departmentId'])) {
                     'spouseEmail' => $_POST['spouseEmail'],
                     'spouseAddress' => $_POST['spouseAddress'],
                 ));
+        $reskin = DB::insert('kin_information_two', array(
+                    'svn' => $_SESSION['svc'],
+                    'kinFullName' => $_POST['kinFullName'],
+                    'kinPhone' => $_POST['kinPhone'],
+                    'kinEmail' => $_POST['kinEmail'],
+                    'kinRelationship' => $_POST['kinRelationship'],
+                    'kinAddress' => $_POST['kinAddress'],
+                    'kinGender' => $_POST['kinGender'],
+                 ));
            
-       if($res && $resSpouse){
+        if($res && $resSpouse && $reskin){
             $_SESSION['success'] = " Records Successful Added";
            echo "<script>location.href='retirement_verification2.php'</script>";
            

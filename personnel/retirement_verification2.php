@@ -350,7 +350,7 @@ function saveRecord(){
                             <label for="email">EMAIL</label>
                             <input type="email"  name="email" value="<?php echo $kinEmail; ?>"  class="form-control" id="email">
                           </div>
-                         </div>
+                </div>
                   
                  <div class="col-md-4">
                      <div class="mb-3">
@@ -358,6 +358,19 @@ function saveRecord(){
                         <input type="text" name="kinRelationship" required="required" value="<?php echo $relationship; ?>" class="form-control" id="kinRelationship" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>
+
+                <div class="col-md-4" style="text-transform: uppercase;">
+                            <div class="mb-3">
+                            <label for="gender">Gender</label>
+                              <select name="gender" class="form-control" id="gender">
+                                  
+                                <option value="">--Select Gender--</option>
+                                <option value="MALE" <?php if($gender=='MALE'){ echo 'Selected';}?>>MALE</option>
+                                <option value="FEMALE" <?php if($gender=='FEMALE'){ echo 'Selected';}?>>FEMALE</option>
+                              </select>
+                          </div>
+                    </div>
+
                 
                 <div class="col-md-4">
                      <div class="mb-3">
@@ -372,30 +385,42 @@ function saveRecord(){
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinFullName2">Full Name</label>
-                        <input type="text" name="kinFullname2" required="required" value="" class="form-control" id="kinFullname2" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label for="kinFullName">Full Name</label>
+                        <input type="text" name="kinFullName" required="required" value="" class="form-control" id="kinFullName" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                   </div>
                   
                   <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinPhone2">Phone</label>
-                        <input type="text" minlength="11" maxlength="11" name="kinPhone2" value="" required="required" class="form-control" id="kinPhone2">
+                        <label for="kinPhone">Phone</label>
+                        <input type="text" minlength="11" maxlength="11" name="kinPhone" value="" required="required" class="form-control" id="kinPhone">
                     </div>
                 </div>
                 <div class="col-md-4" style="text-transform: uppercase;">
                             <div class="mb-3">
                             <label for="kinEmail2">EMAIL</label>
-                            <input type="email"  name="kinEmail2" value="" required="required" class="form-control" id="kinEmail2">
+                            <input type="email"  name="kinEmail" value="" required="required" class="form-control" id="kinEmail">
                           </div>
                          </div>
                   
                  <div class="col-md-4">
                      <div class="mb-3">
-                        <label for="kinRelationship2">Relationship</label>
-                        <input type="text" name="kinRelationship2" required="required" value="" class="form-control" id="kinRelationship2" onkeyup="this.value = this.value.toUpperCase();" >
+                        <label for="kinRelationship">Relationship</label>
+                        <input type="text" name="kinRelationship" required="required" value="" class="form-control" id="kinRelationship" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>
+
+                <div class="col-md-4" style="text-transform: uppercase;">
+                            <div class="mb-3">
+                            <label for="gender">Gender</label>
+                              <select name="kinGender" class="form-control" id="kinGender">
+                                  
+                                <option value="">--Select Gender--</option>
+                                <option value="MALE" <?php if($gender=='MALE'){ echo 'Selected';}?>>MALE</option>
+                                <option value="FEMALE" <?php if($gender=='FEMALE'){ echo 'Selected';}?>>FEMALE</option>
+                              </select>
+                          </div>
+                    </div>
                 
                 <div class="col-md-4">
                      <div class="mb-3">
