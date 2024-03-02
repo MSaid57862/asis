@@ -1,9 +1,4 @@
-
-
-
-
 <?php 
- json_decode($_GET['basic_information']);
 session_start(); ?>
 <?php require_once '../connections/meekro/db.class.php'; ?>
 <?php require_once 'functions.php';?>
@@ -572,15 +567,26 @@ if (isset($_POST['departmentId'])) {
 
 
     //ADDING BANK INFORMATION
-    if (isset($_POST['basic_information'])) {
+  if (isset($_POST['officer-bank'])) {
+    // print_r($_POST);
+    // return;
     $svn = $_SESSION['svc'];
+
+    //settings Next of kin info
+    $kinFullName2 = $_POST['kinFullName2'];
+    $phone2 = $_POST['kinPhone2'];
+    $gender2 = $_POST['kinGender2'];
+    $email2 = $_POST['kinEmail2'];
+    $relationship2 = $_POST['kinRelationship2'];
+    $address2 = $_POST['kinAddress2'];
+
       $record = DB::query("SELECT * FROM basic_information WHERE svn = '$svn' AND submission_status = 'Submitted'");
        if ($record) {
            //echo "<script>location.href='preview.php'</script>";
        }else{
        $res = DB::query("SELECT * FROM bank_info WHERE svn = '$svn'");
        $resSpouse = DB::query("SELECT * FROM spouse WHERE svn = '$svn'");
-       $reskin = DB::query("SELECT * FROM kin_information_two WHERE svn = '$svn'");
+       $reskin = DB::query("SELECT * FROM kin_information WHERE svn = '$svn'");
            if ($res && $resSpouse && $reskin) {
            $svn = $_SESSION['svc'];
            $bankName = $_POST['bankName'];
@@ -594,16 +600,7 @@ if (isset($_POST['departmentId'])) {
             $spouseEmail = $_POST['spouseEmail'];
             $spouseAddress = $_POST['spouseAddress'];
 
-            //settings Next of kin info
-            $kinFullName = $_POST['kinFullName'];
-            $phone = $_POST['kinPhone'];
-            $gender = $_POST['kinGender'];
-            $email = $_POST['kinEmail'];
-            $relationship = $_POST['kinRelationship'];
-            $address = $_POST['kinAddress'];
-
-
-            $reskin = DB::query("UPDATE kin_information_two SET kinFullName=%s, kinPhone=%s, kinEmail=%s, kinGender=%s,  kinRelationship=%s, kinAddress=%s WHERE svn=%s", $kinFullName, $kinPhone, $kinEmail, $kinGender, $kinRelationship, $kinAddress, $svn);
+            $reskin = DB::query("UPDATE kin_information SET fullname=%s, phone=%s, email=%s, gender=%s,  relationship=%s, address=%s WHERE svn=%s", $kinFullName2, $kinPhone2, $kinEmail2, $kinGender2, $kinRelationship2, $kinAddress2, $svn);
             $resSpouse = DB::query("UPDATE spouse SET spouseFullName=%s, spousePhone=%s, spouseEmail=%s, spouseAddress=%s WHERE svn=%s", $spouseFullName, $spousePhone, $spouseEmail, $spouseAddress, $svn);
        $res = DB::query("UPDATE bank_info SET bankName=%s, accName=%s, BVN=%s, accNumber=%s WHERE svn=%s", $bankName, $accName, $BVN, $accNumber, $svn);
            $_SESSION['success'] = " Records Successful Added";
@@ -624,14 +621,15 @@ if (isset($_POST['departmentId'])) {
                     'spouseEmail' => $_POST['spouseEmail'],
                     'spouseAddress' => $_POST['spouseAddress'],
                 ));
-        $reskin = DB::insert('kin_information_two', array(
+        $reskin = DB::insert('kin_information', array(
                     'svn' => $_SESSION['svc'],
-                    'kinFullName' => $_POST['kinFullName'],
-                    'kinPhone' => $_POST['kinPhone'],
-                    'kinEmail' => $_POST['kinEmail'],
-                    'kinRelationship' => $_POST['kinRelationship'],
-                    'kinAddress' => $_POST['kinAddress'],
-                    'kinGender' => $_POST['kinGender'],
+                    'fullname' => $kinFullName2,
+                    'phone' => $phone2,
+                    'email' => $email2,
+                    'relationship' => $relationship2,
+                    'address' => $address2,
+                    'gender' => $gender2,
+                    'date_created' => time(),
                  ));
            
         if($res && $resSpouse && $reskin){
