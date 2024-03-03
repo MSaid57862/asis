@@ -113,8 +113,7 @@ if(isset($_SESSION['username'])){
                         <span><img src="<?php echo 'passports/'.$passport; ?>" height="140px" width="180px" ></span>
                     </div>
                   <div class="form-group col-md-8 my-auto">
-                      <h3>
-                        
+                      <h3>    
                         <!--<label for="rank" class="">Fullname</label>-->
                         <span><?php echo $surname. ' '.$firstname.' '.$middlename.' '.$othername; ?></span>
                     </h3>

@@ -5,12 +5,18 @@
     $departmentId = $_SESSION['department_id'];
 ?>
 
-
-<?php
-function saveRecord(){
- json_decode("hello");
-}
-?>
+<script>
+        function previewImage(event) {
+            console.log(event);
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('profile_imageprofile_image');
+                output.src = reader.result;
+                console.log(reader.result); // Log image data to the console
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        };
+    </script>
 
 <?php
    if (isset($_SESSION['svc'])) {
@@ -115,14 +121,14 @@ function saveRecord(){
                     </div> <!-- end row -->
                         
     <div class="form-group col-md-12 preview" id="preview-div">
-        <form class="form row" id="officer-bank" method="POST" action="backend.php" enctype="multipart/form-data">
+        <form class="form row" name="staffForm" id="officer_bank" method="POST" action="backend.php" enctype="multipart/form-data">
                 <div class="row justify-content-between" style="background-color:#ecedeb; color:#226305;">
                     <div class="col-md-8">
                         <span><h4>Basic Information</h4></span>
                     </div>
                 </div>
                   <div class="col-md-4 mb-3">
-                        <span><img src="<?php echo 'passports/'.$passport; ?>" height="190px" width="180px" ></span>
+                        <span><img src="<?php echo 'passports/'.$passport; ?>" id="profile_image" height="190px" width="180px" ></span>
                  </div>
                     
                 <div class="col-md-8 my-auto">
@@ -279,15 +285,7 @@ function saveRecord(){
                     <div class="col-md-12">
                         <span><h3>OTHER INFORMATION</h3></span>
                     </div>     
-                    <!-- <div class="col-md-4">
-                     <div class="mb-3">
-                        <label style="color: black" for="nin">NIN</label>
-                        <input type="number" minlength="11" maxlength="11" name="nin" value="" required="required" class="form-control" id="nin">
-                    </div>
-                    </div>   -->
                 </div>
-            <!-- </br> -->
-
             <div class="col-md-12 mb-3" style="background-color:#ecedeb; color:#226305;">
                     <span><h5>BANK DETAILS</h5></span>
                 </div>
@@ -378,7 +376,7 @@ function saveRecord(){
                  <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="kinRelationship">Relationship</label>
-                        <input style="font-size: 20px;color: black" type="text" name="kinRelationship1" required="required" value="<?php echo $relationship; ?>" class="form-control" id="kinRelationship1" onkeyup="this.value = this.value.toUpperCase();" >
+                        <input style="font-size: 20px;color: black" type="text" name="kinRelationship1" required="required" value="<?php echo $relationship;?>" class="form-control" id="kinRelationship1" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>
 
@@ -457,10 +455,10 @@ function saveRecord(){
             $record = DB::query("SELECT id, svn, submission_status FROM basic_information WHERE svn = '$svn' AND submission_status <> 'Active'");
             if ($record) {
                 ?>
-                <div class="col-md-12 text-right mt-2 d-print-none">
-                <button type="submit" name="update-officer" id="update-officer" value="Proceed" class="btn btn-success" id="save"><i class="loader" role="status"></i>
+                <div class="col-md-12 text-right mt-2 d-print-none"> 
+                <!-- <button type="submit" name="update-officer" id="update-officer" value="Proceed" class="btn btn-success" id="save"><i class="loader" role="status"></i>
                   Next <i class="fa fa-arrow-right"></i>
-                </button>
+                </button> -->
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 <a href="pic.php" class="btn btn-secondary d-print-none">Go Back  &laquo;</a>
               </div>
@@ -482,6 +480,12 @@ function saveRecord(){
             
         </form>
     </div>
+
+    
+<script>
+    
+        console.log('Form', document.getElementById("officer_bank").innerHTML )
+</script>
                 </div> <!-- end card body-->
             </div> <!-- end card -->
         </div><!-- end col-->
@@ -503,6 +507,8 @@ function saveRecord(){
 
         <!-- END wrapper -->
     <?php include("modals.php"); ?>
+
+
 
     <?php include("footer.php"); ?>
 <script>

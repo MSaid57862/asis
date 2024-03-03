@@ -394,9 +394,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_GET['tankDelId'])) {
         // code...
         $tankId = $_GET['tankDelId'];
-        DB::query("UPDATE tanks SET status=%s WHERE tank_id=%i", 'Deleted', $tankId);
+        DB::query("UPDATE tanks SET status=%s WHERE tank_id=%i", 'd', $tankId);
         if(DB::affectedRows() == 1){
-            $_SESSION['del'] = " Deleted ";
+            $_SESSION['del'] = " d ";
             header('Location: ' . $_SERVER['HTTP_REFERER']."?&s");
         }else{
             $_SESSION['fail'] = ' Error. Try Again ';
@@ -408,9 +408,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_GET['pumpDelId'])) {
         // code...
         $pumpId = $_GET['pumpDelId'];
-        DB::query("UPDATE pumps SET status=%s WHERE pump_id=%i", 'Deleted', $pumpId);
+        DB::query("UPDATE pumps SET status=%s WHERE pump_id=%i", 'd', $pumpId);
         if(DB::affectedRows() == 1){
-            $_SESSION['del'] = " Deleted ";
+            $_SESSION['del'] = " d ";
             header('Location: ' . $_SERVER['HTTP_REFERER']."?&s");
         }else{
             $_SESSION['fail'] = ' Error. Try Again ';
@@ -422,9 +422,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_GET['userDelId'])) {
         // code...
         $userId = $_GET['userDelId'];
-        DB::query("UPDATE users SET status=%s WHERE user_id=%i", 'Deleted', $userId);
+        DB::query("UPDATE users SET status=%s WHERE user_id=%i", 'd', $userId);
         if(DB::affectedRows() == 1){
-            $_SESSION['del'] = " Deleted ";
+            $_SESSION['del'] = " d ";
             header('Location: ' . $_SERVER['HTTP_REFERER']."?&s");
         }else{
             $_SESSION['fail'] = ' Error. Try Again ';

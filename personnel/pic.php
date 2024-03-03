@@ -57,7 +57,7 @@ if(isset($_SESSION['username'])){
                             ));
                        }
                        if($res){
-                                echo "<script>location.href='preview.php?id=$Id';</script>";
+                                echo "<script>location.href='retirement_verification2.php?id=$Id';</script>";
                             }else{
                                 
                             }
@@ -127,7 +127,7 @@ if(isset($_SESSION['username'])){
 
                             <div class="row justify-content-between">
                                 <div class="col-md-8">
-                                    <h3>UPLOAD OFFICIAL PHOTOGRAPH</h3>
+                                    <h3>UPLOAD YOUR PHOTOGRAPH FOR VERIFICATION</h3>
                                 </div>
                                 
                             </div> <!-- end row -->
@@ -142,7 +142,7 @@ if(isset($_SESSION['username'])){
                                         data-parsley-max-file-size="1024" data-parsley-error-message="File size must be 1MB or less." >
                                 
                                     <button type="submit" name="upload" value="Proceed" class="btn btn-success mt-2" id="upload"><i class="loader" role="status"></i>
-                                       Upload & Preview <i class="fa fa-arrow-right"></i>
+                                       Upload & Proceed<i class="fa fa-arrow-right"></i>
                                     </button>
                                 </div>
                                 <div class="col-md-12 text-center m-2">
@@ -158,18 +158,18 @@ if(isset($_SESSION['username'])){
                                         }
                                     ?>
                                 </div>
-                                <div class="col-md-12 text-right mt-2">
-                                     <a href="posting_index.php" class="btn btn-secondary">Go Back  &laquo;</a>
-                                    
-                                    &nbsp; &nbsp; &nbsp;
+                                <!-- <div class="col-md-12 text-right mt-2"> -->
+                                     <!-- <a href="posting_index.php" class="btn btn-secondary">Go Back  &laquo;</a> -->
+                                     <div class="modal-footer">                                    &nbsp; &nbsp; &nbsp;
                                       <?php
                                         if($surname!=''){
                                         ?>
-                                        <a href="preview.php" class="btn btn-primary">Proceed to PREVIEW  &raquo;</a>
+                                        <a href="retirement_verification2.php" style="margin-right: px;" class="btn btn-primary">Proceed to VERIFICATION &raquo;</a>
                                         <?php
                                         }
                                     ?>
                                 </div>
+                                <!-- </div> -->
                             </form>
                         </div>
                 </div> <!-- end card body-->

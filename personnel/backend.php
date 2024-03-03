@@ -3,7 +3,6 @@ session_start(); ?>
 <?php require_once '../connections/meekro/db.class.php'; ?>
 <?php require_once 'functions.php';?>
 <?php
-
 //FETCHING LGAs FROM SELECTION OF STATE OF ORIGIN
 	if (isset($_POST['stateId'])) { 	
 		// code...
@@ -316,8 +315,6 @@ if (isset($_POST['departmentId'])) {
 			    	    }else{
 			    	        $previousPostingId = $query2['posting_id'];
 			    	    }
-			    	    
-			    	    
 			    	            //INSERT NEW POSTING RECORDS
 			    	            DB::insertIgnore('postings', [
                         		  'svn' => $svn,
@@ -410,13 +407,8 @@ if (isset($_POST['departmentId'])) {
 			     //OFFICE RECORDS EXIST
 			    $_SESSION['fail'] = ' Error. This Service Number does not exist with Records ';
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
-			}
-		
-		
+			}	
 	}
-
-
-
 //ADDING OFFICER BIODATA INFORMATION
   if (isset($_POST['add-officer'])) {
       $birth = substr($_POST['dob'], 0, 4);
@@ -594,9 +586,9 @@ if (isset($_POST['officer-kin'])) {
            //echo "<script>location.href='preview.php'</script>";
        }else{
        $res = DB::query("SELECT * FROM bank_info WHERE svn = '$svn'");
-       $resSpouse = DB::query("SELECT * FROM spouse WHERE svn = '$svn'");
+       
        $reskin = DB::query("SELECT * FROM kin_information WHERE svn = '$svn'");
-           if ($res && $resSpouse && $reskin) {
+           if ($res) {
            $svn = $_SESSION['svc'];
            $bankName = $_POST['bankName'];
            $accName = $_POST['accName'];
@@ -609,8 +601,7 @@ if (isset($_POST['officer-kin'])) {
             $spouseEmail = $_POST['spouseEmail'];
             $spouseAddress = $_POST['spouseAddress'];
 
-            $reskin = DB::query("UPDATE kin_information SET fullname=%s, phone=%s, email=%s, gender=%s,  relationship=%s, address=%s WHERE svn=%s", $kinFullName2, $kinPhone2, $kinEmail2, $kinGender2, $kinRelationship2, $kinAddress2, $svn);
-            $resSpouse = DB::query("UPDATE spouse SET spouseFullName=%s, spousePhone=%s, spouseEmail=%s, spouseAddress=%s WHERE svn=%s", $spouseFullName, $spousePhone, $spouseEmail, $spouseAddress, $svn);
+            // $reskin = DB::query("UPDATE kin_information SET fullname=%s, phone=%s, email=%s, gender=%s,  relationship=%s, address=%s WHERE svn=%s", $kinFullName2, $kinPhone2, $kinEmail2, $kinGender2, $kinRelationship2, $kinAddress2, $svn);
        $res = DB::query("UPDATE bank_info SET bankName=%s, accName=%s, BVN=%s, accNumber=%s WHERE svn=%s", $bankName, $accName, $BVN, $accNumber, $svn);
            $_SESSION['success'] = " Records Successful Added";
            echo "<script>location.href='retirement_verification2.php'</script>";
@@ -622,14 +613,22 @@ if (isset($_POST['officer-kin'])) {
            'BVN' => $_POST['BVN'],
            'accNumber' => $_POST['accNumber'],
        ));
+       $resSpouse = DB::query("SELECT * FROM spouse WHERE svn = '$svn'");
+       if($resSpouse){
+        $resSpouse = DB::query("UPDATE spouse SET spouseFullName=%s, spousePhone=%s, spouseEmail=%s, spouseAddress=%s WHERE svn=%s", $spouseFullName, $spousePhone, $spouseEmail, $spouseAddress, $svn);
+       }else{
+        $resSpouse = DB::insert('spouse', array(
+            'svn' => $_SESSION['svc'],
+            'spouseFullName' => $_POST['spouseFullName'],
+            'spousePhone' => $_POST['spousePhone'],
+            'spouseEmail' => $_POST['spouseEmail'],
+            'spouseAddress' => $_POST['spouseAddress'],
+        ));
+       }
 
-       $resSpouse = DB::insert('spouse', array(
-                    'svn' => $_SESSION['svc'],
-                    'spouseFullName' => $_POST['spouseFullName'],
-                    'spousePhone' => $_POST['spousePhone'],
-                    'spouseEmail' => $_POST['spouseEmail'],
-                    'spouseAddress' => $_POST['spouseAddress'],
-                ));
+       DB::query("DELETE from kin_information WHERE svn=%s", $_SESSION['svn']);
+
+       
         $reskin = DB::insert('kin_information', array(
             'svn' => $_SESSION['svc'],
             'fullname' => $kinFullName2,
