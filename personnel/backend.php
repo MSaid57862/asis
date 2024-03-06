@@ -560,6 +560,45 @@ if (isset($_POST['officer-kin'])) {
    }
 
 
+//ADDING ATTACHMENT
+if (isset($_POST['ret_duct'])) {
+    $svn = $_SESSION['svc'];
+    $record = DB::query("SELECT * FROM upload WHERE svn = '$svn'");
+       if ($record) {
+           //echo "<script>location.href='preview.php'</script>";
+       }else{
+       $res = DB::query("SELECT * FROM upload WHERE svn = '$svn'");
+           if ($res) {
+           $svn = $_SESSION['svc'];
+           $fullname = $_POST['retLetter'];
+           $phone = $_POST['retIdCard'];
+           
+       $res = DB::query("UPDATE upload SET retLetter=%s, retIdCard=%s, WHERE svn=%s", $retLetter, $retIdCard, $svn);
+           $_SESSION['success'] = " Records Successful Added";
+           echo "<script>location.href='posting_index.php'</script>";
+           }else{
+       $res = DB::insert('upload', array(
+           'svn' => $_SESSION['svc'],
+           'retLetter' => $_POST['retLetter'],
+           'retIdCard' => $_POST['retIdCard'],
+       )
+           
+   );
+       if($res){
+            $_SESSION['success'] = " Records Successful Added";
+           echo "<script>location.href='posting_index.php'</script>";
+           
+       }else{
+            $_SESSION['fail'] = " Failed to Added Records ";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+               }
+       }
+   
+       }
+   }
+
+
+
     //ADDING BANK INFORMATION
   if (isset($_POST['officer-bank'])) {
     // print_r($_POST);

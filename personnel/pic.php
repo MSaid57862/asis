@@ -4,6 +4,7 @@
     $officerID = $_SESSION['user_id'];
     $departmentId = $_SESSION['department_id'];
 ?>
+
 <?php
 if(isset($_SESSION['username'])){
     $svn = $_SESSION['svc'];
