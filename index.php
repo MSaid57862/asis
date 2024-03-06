@@ -8,6 +8,9 @@
         
         
         $query = DB::queryFirstRow("SELECT * FROM users WHERE username=%s AND status=%s", $username, 'Active');
+        if(!$query){
+          $query = DB::queryFirstRow("SELECT * FROM users WHERE svc=%s AND status=%s", $username, 'Active');
+        }
         if($query){
             $salt = $query['hash_key'];
             $password =  $_POST['password'];
@@ -21,7 +24,7 @@
                 $_SESSION['user_id'] = $results['user_id'];
                 $_SESSION['username'] = $results['username'];
                 $_SESSION['svc'] = $results['svc'];
-                 $_SESSION['rank'] = $results['rank'];
+                $_SESSION['rank'] = $results['rank'];
                 $_SESSION['command_id'] = $results['command_id'];
                 $_SESSION['department_id'] = $results['department'];
                 $_SESSION['fullname'] = $results['fullname'];
@@ -36,7 +39,7 @@
                 $_SESSION['barrack_manager'] = $results['barrack_manager'];
                 $_SESSION['staff_officer'] = $results['staff_officer'];
                 $_SESSION['command_staff_officer'] = $results['command_staff_officer'];
-                 $_SESSION['department_head'] = $results['department_head'];
+                $_SESSION['department_head'] = $results['department_head'];
                 
                 $_SESSION['pass_change'] = $results['pass_change'];
                 if ($_SESSION['access_level'] == '1') {
