@@ -586,7 +586,7 @@ if (isset($_POST['ret_duct'])) {
    );
        if($res){
             $_SESSION['success'] = " Records Successful Added";
-           echo "<script>location.href='posting_index.php'</script>";
+           echo "<script>location.href='retirement_verification2.php'</script>";
            
        }else{
             $_SESSION['fail'] = " Failed to Added Records ";

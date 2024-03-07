@@ -500,7 +500,7 @@
                             
                             <div class="col-md-12">
                                <div class="mb-3">
-                                    <label style="font-size: 20px;color: black" for="dateEnded" class="form-label">Retirement Id Cart</label>
+                                    <label style="font-size: 20px;color: black" for="dateEnded" class="form-label">Retirement Id Card</label>
                                     <input type="file" name="retIdCard" required class="form-control" id="retIdCart">  
                                 </div>
                             </div>

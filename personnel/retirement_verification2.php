@@ -333,7 +333,7 @@
                   <div class="col-md-4">
                      <div class="mb-3">
                         <label style="font-size: 20px;color: black" for="spousePhone">Phone</label>
-                        <input style="font-size: 20px;color: black" type="number" minlength="11" maxlength="11" name="spousePhone" value="" required="required" class="form-control" id="spousePhone">
+                        <input style="font-size: 20px;color: black" type="number" minlength="11" maxlength="11" name="spousePhone" value="" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required class="form-control" id="spousePhone">
                     </div>
                 </div>
                 <div class="col-md-4" style="text-transform: uppercase;">
