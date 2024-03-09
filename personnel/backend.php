@@ -597,89 +597,6 @@ if (isset($_POST['ret_duct'])) {
    }
 
 
-//SCHEDULE VERIFICATION
-if (isset($_POST['verification_schedule'])) {
-    $year = date('Y', time()) + 1;
-    $initiator = $_SESSION['svc'];
-    $startDate = $_POST['dateStarted'];
-    $endDate = $_POST['dateEnded'];
-    $todayDate = strtotime(date('Y-m-d'));
-
-    if ($endDate == '') {
-        $terminator = 'N/A';
-        $dateTerminated = 'N/A';
-    } else{
-            if(strtotime($startDate) >= strtotime($endDate)){
-            $_SESSION['fail'] = 'Error. End Date cannot be before '.$startDate;
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-            }else {
-                if($todayDate >= strtotime($endDate)){
-            $_SESSION['fail'] = 'Error. End Date cannot be before TODAY';
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-            }else{
-                
-           
-
-    // Select all relevant emolument schedules for the year and inactive schedules whose end date has not passed
-    $query = DB::query("SELECT * FROM verification_schedule WHERE verification_year=%s AND (schedule_status='Active' OR (schedule_status='Inactive' AND end_date >= NOW()))", $year);
-
-    if (!empty($query)) {
-        foreach ($query as $record) {
-            $today = strtotime(date('Y-m-d'));
-            $status = $record['schedule_status'];
-            $end = strtotime($record['end_date']);
-
-            if ($status == 'Active' && $end >= $today) {
-                $_SESSION['fail'] = 'Error. Emolument for ' . $year . ' is still In-Progress';
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
-                exit; // Terminate script execution after redirect
-            } elseif ($status == 'Active') {
-                $_SESSION['fail'] = 'Error. Emolument for ' . $year . ' has already been scheduled and is still Active';
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
-                exit; // Terminate script execution after redirect
-            }
-        }
-    }
-     $today = strtotime(date('Y-m-d'));
-    // Proceed to insert the new emolument schedule
-    if ($endDate != '' && strtotime($endDate) < $today) {
-        $_SESSION['fail'] = 'Error. End date has passed for ' . $year . ' Emolument';
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
-    } else {
-        if($endDate != ''){
-            $scheduleStat = 'Inactive';
-        }else{
-             $scheduleStat = 'Active';
-        }
-        $terminator = $_SESSION['svc'];
-        $dateTerminated = time();
-        // Insert the new emolument schedule
-        DB::insert('verification_schedule', [
-            'initiated_by' => $initiator,
-            'date_initiated' => time(),
-            'schedule_status' => $scheduleStat,
-            'verification_year' => $year,
-            'date_approve' => $dateApprove,
-        ]);
-
-        if (DB::affectedRows() == 1) {
-            $_SESSION['success'] = "verification Period successfully Added";
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-        } else {
-            $_SESSION['fail'] = 'Error. Try Again';
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-        }
-     }
-    
-    }
-   }
-  }
-}
-
-
-
-
-
 
     //ADDING BANK INFORMATION
   if (isset($_POST['officer-bank'])) {
@@ -702,28 +619,34 @@ if (isset($_POST['verification_schedule'])) {
     $relationship = $_POST['kinRelationship1'];
     $address = $_POST['kinAddress1'];
 
-    $year = date('Y', time());
-    $initiator = $_SESSION['svc'];
-    $todayDate = strtotime(date('Y-m-d'));
+    $currentYear = date('Y'); // Get the current year
+$nextYear = $currentYear + 1; // Calculate the next year
 
-    // Select all relevant emolument schedules for the year and inactive schedules whose end date has not passed
-    $query = DB::query("SELECT * FROM verification_schedule WHERE verification_year=%s AND initiated_by=%s AND (schedule_status='Active' OR (schedule_status='Inactive'))", $year, $svn);
+$initiator = $_SESSION['svc'];
+$todayDate = date('Y-m-d'); // Get the current date
 
-    if($query){
-        $_SESSION['fail'] = 'Error. Sorry, You have already added record for this year, please go ahead to update the record';
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
-    }else{
-        DB::insert('verification_schedule', [
-            'initiated_by' => $initiator,
-            'date_submited' => $todayDate,
-            'schedule_status' => 'Inactive',
-            'verification_year' => $year,
-            // 'date_approve' => ,
-        ]);
-    }
+// Check if the current year has any verification schedules initiated by the user
+$query = DB::query("SELECT * FROM verification_schedule WHERE verification_year=%s AND initiated_by=%s", $currentYear, $initiator);
 
-           //code
-        
+if ($query) {
+    // If there are verification schedules for the current year, prevent the user from sending any responses
+    $_SESSION['fail'] = 'Error. Sorry, You have already added a record for this year. Please go ahead to update the record or wait until next year to send new responses.';
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+} else {
+    // Insert the record with the formatted date for the current year
+    DB::insert('verification_schedule', [
+        'initiated_by' => $initiator,
+        'date_submited' => $todayDate, 
+        'schedule_status' => 'Inactive',
+        'verification_year' => $currentYear, // Insert for the current year
+    ]);
+}
+
+    
+
+
+
+    
 
       $record = DB::query("SELECT * FROM basic_information WHERE svn = '$svn' AND submission_status = 'Submitted'");
        if ($record) {

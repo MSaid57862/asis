@@ -142,9 +142,32 @@ if(isset($_SESSION['username'])){
                                         data-allowed-file-extensions='["jpg", "jpeg"]' data-show-caption="true" aria-describedby="basic-addon1"
                                         data-parsley-max-file-size="1024" data-parsley-error-message="File size must be 1MB or less." >
                                 
-                                    <button type="submit" name="upload" value="Proceed" class="btn btn-success mt-2" id="upload"><i class="loader" role="status"></i>
+                                    
+
+
+
+                    <div class="row justify-content-between" style="background-color:#ecedeb; color:#226305;">
+                    <div class="col-md-4">
+                    <button type="submit" name="upload" value="Proceed" class="btn btn-success mt-2" id="upload"><i class="loader" role="status"></i>
                                        Upload & Proceed<i class="fa fa-arrow-right"></i>
-                                    </button>
+                    </button>  
+                    </div>                      
+                                    <div class="col-md-4">
+                                    <div class="modal-footer">                                    &nbsp; &nbsp; &nbsp;
+                                      <?php
+                                        if($surname!=''){
+                                        ?>
+                                        <a href="retirement_verification2.php" style="margin-right: px;" class="btn btn-primary">Proceed to VERIFICATION &raquo;</a>
+                                        <?php
+                                        }
+                                    ?>
+                                </div>
+                                        </div><!-- end col-->
+                                     </div> <!-- end row -->
+
+
+
+
                                 </div>
                                 <div class="col-md-12 text-center m-2">
                                     <?php

@@ -99,7 +99,7 @@ function getUnit($unitId){
         if($results==true){
             $array['unit_id'] = $results['unit_id'];
             $array['unit_name'] = $results['unit_name'];
-             $array['unit_code'] = $results['unit_code'];
+            $array['unit_code'] = $results['unit_code'];
         }
     return $array;
     }

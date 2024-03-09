@@ -39,7 +39,7 @@
                                 <div class="card">
                                     <div class="card-body">
 
-            <form class="form row" id="" method="POST" action="retirement_verification2.php" enctype="multipart/form-data">
+            <form class="form row" id="" method="POST" action="pic.php" enctype="multipart/form-data">
                 <div class="row justify-content-between" style="background-color:#ecedeb; color:#226305;">
                     <div class="col-md-8">
                         <span><h2>ANNUAL RETIREMENT RECORDS</h2></span>
@@ -60,8 +60,8 @@
                                                     <th>Date Submitted</th>
                                                     <th>initiated_by</th>
                                                     <th>Status</th>
-                                                    <th>Edit</th>
-                                                    <th>Delete</th>
+                                                    <th>View</th>
+                                                    <th>Update</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -91,9 +91,9 @@
                                                                 <td><?php echo $result['initiated_by']; ?></td>
                                                                 <td><?php echo $scheduleStatus; ?></td>
                                                                 <td>
-                                                                    <button type="button" data-endEmolument="<?php echo $result['id']; ?>" id="viewScheduleEmolument" name="viewScheduleEmolument" class="btn btn-sm btn-outline-danger waves-effect waves-light viewScheduleEmolument" data-bs-toggle="modal" data-bs-target="#view-emolument-schedule-modal"><i class="fas fa-eye"></i></i></button>
+                                                                    <button type="button" data-endEmolument="<?php echo $result['id']; ?>" id="viewScheduleEmolument" name="viewScheduleEmolument" class="btn btn-sm btn-outline-danger waves-effect waves-light viewScheduleEmolument" data-bs-toggle="modal" data-bs-target=""><i class="fas fa-eye"></i></i></button>
                                                                     &nbsp; &nbsp;
-                                                                    <button type="button" data-modifySchedule="<?php echo $id; ?>" id="editEmolumentDate" name="editEmolumentDate" class="btn btn-sm btn-outline-secondary waves-effect waves-light editEmolumentDate" data-bs-toggle="modal" data-bs-target="#edit-emolument-schedule-modal"><i class="fas fa-edit"></i></i></button>
+                                                                    <button type="button" data-modifySchedule="<?php echo $id; ?>" id="editEmolumentDate" name="editEmolumentDate" class="btn btn-sm btn-outline-secondary waves-effect waves-light editEmolumentDate" data-bs-toggle="modal" data-bs-target=""><i class="fas fa-edit"></i></i></button>
                                                                 </td>
                                                             </tr>
                                                 <?php

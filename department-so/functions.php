@@ -45,6 +45,9 @@ function getRankDetail($rankId){
     return $array;
     }
 
+
+
+
 function getOfficerDetail($svn){
         $results = DB::queryFirstRow("SELECT * FROM basic_information WHERE svn=%s", $svn);
         $array=[];

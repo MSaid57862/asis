@@ -322,7 +322,6 @@ function getNextKin($svn){
     return $array;
     }
     
-    
     function getRank($rankId){
         $results = DB::queryFirstRow("SELECT * FROM ranks WHERE rank_id=%i", $rankId);
         $array=[];
@@ -354,7 +353,6 @@ function getDesignation($designationId){
         }
     return $array;
     }
-    
  function getHeadquarterUnits($commId){
         $query = DB::query("SELECT * FROM unit WHERE command_id=%i", $commId);
         

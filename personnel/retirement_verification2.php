@@ -71,6 +71,9 @@
               $getResidenceLGA = getLGA($lgaResidenceId);
               $lga = $getLGA['local_govt'];
               $lga1 = $getResidenceLGA['local_govt'];
+
+        
+
 	}else{
 	    //no records found
 	     echo "<script>location.href='index.php'</script>";
@@ -443,7 +446,7 @@
                 
                 <div class="col-md-4">
                      <div class="mb-3">
-                        <label style="font-size: 20px;color: black" for="kinAddress">Address</label>
+                        <label style="font-size: 20px;color: black" for="kinAddress2">Address</label>
                         <input style="font-size: 20px;color: black" type="text" name="kinAddress2" required="required" value="" class="form-control" id="kinAddress" onkeyup="this.value = this.value.toUpperCase();" >
                     </div>
                 </div>
