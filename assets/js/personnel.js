@@ -151,7 +151,6 @@ $('.viewEmolument').click(function(){
 		        alert('Timeout: Please check your internet connection');
 		    },
             success: function (data) {
-                	
             	$('#modalRank').val(data.rank);
             	$('#modalInitials').val(data.initials);
             	$('#modalName').val(data.surname);

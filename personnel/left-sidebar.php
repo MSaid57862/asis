@@ -237,7 +237,7 @@
                                 
                          
                             <li>
-                                <a href="pic.php">
+                                <a href="initiator_index2.php">
                                     <i class="fas  fa fa-user-check"></i>
                                     <span> Retirement</span>
                                 </a>

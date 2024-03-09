@@ -4,7 +4,6 @@
     $officerID = $_SESSION['user_id'];
     $departmentId = $_SESSION['department_id'];
 ?>
-
 <script>
         function previewImage(event) {
             console.log(event);
@@ -460,7 +459,7 @@
                   Next <i class="fa fa-arrow-right"></i>
                 </button> -->
                 &nbsp; &nbsp; &nbsp; &nbsp;
-                <a href="pic.php" class="btn btn-secondary d-print-none">Go Back  &laquo;</a>
+                <a href="pic.php" class="btn btn-secondary d-print-none">Update your PICTURE  &laquo;</a>
               </div>
                 <?php
             }else{
