@@ -58,7 +58,7 @@
                                                 <tr>
                                                     <th>Year</th>
                                                     <th>Date Submitted</th>
-                                                    <th>Date Of Approval</th>
+                                                    <th>initiated_by</th>
                                                     <th>Status</th>
                                                     <th>Edit</th>
                                                     <th>Delete</th>
@@ -71,27 +71,14 @@
                                                         $i=1;
                                                         foreach($query as $result){  
                                                             $id = $result['id'];
-                                                            $startDate = $result['start_date'];
-                                                            $endDate = $result['end_date'];
-                                                            if($endDate==''){
-                                                                $duration = 'Open';
-                                                                $endDate = 'N/A';
-                                                                $duration2 = 0;
-                                                            }else{
-                                                                $start = strtotime($result['start_date']);
-                                                                $end = strtotime($result['end_date']);
+                                                            $startDate = $result['date_submited'];
+
+                                                                $start = strtotime($result['date_submited']);
                                                                 $today = strtotime(date('Y-m-d'));
-                                                                if ($start !== false && $end !== false) {
-                                                                    $diffInSeconds = $end - $start;
-                                                                    $diffInSeconds2 = $end - $today;
-                                                                    $duration = floor($diffInSeconds / (60 * 60 * 24)). ' Days'; // 60 seconds * 60 minutes * 24 hours
-                                                                    $duration2 = floor($diffInSeconds2 / (60 * 60 * 24));
-                                                                }
-                                                                
-                                                            }
+                                                            
                                                             
                                                             $status = $result['schedule_status'];
-                                                            if($status ='Inactive' && $duration2 > 0){
+                                                            if($status ='Inactive' > 0){
                                                                     $scheduleStatus = 'In Progress';
                                                                 }else{
                                                                     $scheduleStatus = $result['schedule_status'];
@@ -101,10 +88,7 @@
                                                             <tr class="">
                                                                <td><?php echo  'Emolument '.$result['verification_year']; ?></td>
                                                                 <td><?php echo $startDate; ?></td>
-                                                                <td><?php echo $endDate; ?></td>
-                                                                <td><?php echo $duration; ?></td>
                                                                 <td><?php echo $result['initiated_by']; ?></td>
-                                                                <td><?php echo $result['terminated_by']; ?></td>
                                                                 <td><?php echo $scheduleStatus; ?></td>
                                                                 <td>
                                                                     <button type="button" data-endEmolument="<?php echo $result['id']; ?>" id="viewScheduleEmolument" name="viewScheduleEmolument" class="btn btn-sm btn-outline-danger waves-effect waves-light viewScheduleEmolument" data-bs-toggle="modal" data-bs-target="#view-emolument-schedule-modal"><i class="fas fa-eye"></i></i></button>
